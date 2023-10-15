@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<!-- ############################################################################################################### -->
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.oinkeep.backend</groupId>
+    <artifactId>oinkeep</artifactId>
+    <version>v1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>OinKeep</name>
+    <description></description>
+
+<!-- ############################################################################################################### -->
+
+    <modules>
+        <module>oinkeep-util</module>
+        <module>oinkeep-core</module>
+        <module>oinkeep-rest</module>
+        <module>oinkeep-plugin</module>
+        <module>oinkeep-boot</module>
+    </modules>
+
+<!-- ############################################################################################################### -->
+
+    <properties>
+
+        <!-- Constants -->
+        <const.java.version>17</const.java.version>
+        <const.encoding>UTF-8</const.encoding>
+        <const.jetty.port>8080</const.jetty.port>
+
+        <!-- Maven -->
+        <maven.compiler.source>${const.java.version}</maven.compiler.source>
+        <maven.compiler.target>${const.java.version}</maven.compiler.target>
+
+        <!-- Project -->
+        <project.build.sourceEncoding>${const.encoding}</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>${const.encoding}</project.reporting.outputEncoding>
+        <project.built.name>${project.artifactId}</project.built.name>
+
+        <!-- Dependencies -->
+        <dep.springframework.version>6.0.13</dep.springframework.version>
+        <dep.javax.servlet.version>4.0.1</dep.javax.servlet.version>
+        <dep.jackson.core.version>2.15.3</dep.jackson.core.version>
+        <dep.jackson.databind.version>2.15.3</dep.jackson.databind.version>
+        <dep.snakeyaml.version>2.2</dep.snakeyaml.version>
+        <dep.lombok.version>1.18.30</dep.lombok.version>
+        <dep.junit.jupiter.version>5.10.0</dep.junit.jupiter.version>
+        <dep.mockito.version>5.6.0</dep.mockito.version>
+
+        <!-- Plugins -->
+        <plugin.maven.compiler.version>3.11.0</plugin.maven.compiler.version>
+        <plugin.maven.resources.version>3.3.1</plugin.maven.resources.version>
+        <plugin.maven.surfire.version>3.1.2</plugin.maven.surfire.version>
+        <plugin.maven.war.version>3.4.0</plugin.maven.war.version>
+        <plugin.jetty.maven.version>11.0.17</plugin.jetty.maven.version>
+
+    </properties>
+
+<!-- ############################################################################################################### -->
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- OinKeep Modules -->
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oinkeep-util</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oinkeep-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oinkeep-plugin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oinkeep-rest</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>oinkeep-boot</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!-- Spring Dependencies -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${dep.springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${dep.springframework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${dep.springframework.version}</version>
+            </dependency>
+
+            <!-- Servlet API -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${dep.javax.servlet.version}</version>
+            </dependency>
+
+            <!-- Jackson Dependencies -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${dep.jackson.core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${dep.jackson.databind.version}</version>
+            </dependency>
+
+            <!-- SnakeYAML -->
+            <dependency>
+                <groupId>org.yaml</groupId>
+                <artifactId>snakeyaml</artifactId>
+                <version>${dep.snakeyaml.version}</version>
+            </dependency>
+
+            <!-- Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${dep.lombok.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JUnit Dependencies -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${dep.junit.jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${dep.junit.jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- Mockito -->
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${dep.mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- ############################################################################################################### -->
+
+    <build>
+
+    <!-- ########################################################################################################### -->
+
+        <finalName>${project.built.name}</finalName>
+
+    <!-- ########################################################################################################### -->
+
+        <pluginManagement>
+
+            <plugins>
+
+                <!-- Maven Compiler Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${plugin.maven.compiler.version}</version>
+                    <configuration>
+                        <source>${const.java.version}</source>
+                        <target>${const.java.version}</target>
+                        <compilerArgs>
+                            <arg>-parameters</arg>
+                        </compilerArgs>
+                    </configuration>
+                </plugin>
+
+                <!-- Maven Resources Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${plugin.maven.resources.version}</version>
+                </plugin>
+
+                <!-- Maven Surefire Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${plugin.maven.surfire.version}</version>
+                    <configuration>
+                        <includes>
+                            <include>**/*Test.java</include>
+                        </includes>
+                    </configuration>
+                </plugin>
+
+                <!-- WAR Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${plugin.maven.war.version}</version>
+                </plugin>
+
+                <!-- Jetty Plugin -->
+                <plugin>
+                    <groupId>org.eclipse.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${plugin.jetty.maven.version}</version>
+                    <configuration>
+                        <webApp>
+                            <contextPath>/</contextPath>
+                        </webApp>
+                        <httpConnector>
+                            <port>${const.jetty.port}</port>
+                        </httpConnector>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+    </build>
+
+<!-- ############################################################################################################### -->
+
+    <developers>
+
+        <developer>
+            <name>Ángel Herce Soto</name>
+            <email>indenaiten@gmail.com</email>
+        </developer>
+
+    </developers>
+
+<!-- ############################################################################################################### -->
+
+</project>

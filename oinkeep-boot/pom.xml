@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+<!-- ############################################################################################################### -->
+
+    <parent>
+        <groupId>org.oinkeep.backend</groupId>
+        <artifactId>oinkeep</artifactId>
+        <version>v1.0.0-SNAPSHOT</version>
+    </parent>
+
+<!-- ############################################################################################################### -->
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>oinkeep-boot</artifactId>
+    <packaging>war</packaging>
+    <name>OinKeep - Boot Module</name>
+    <description>Boot Module</description>
+
+<!-- ############################################################################################################### -->
+
+    <properties>
+
+        <!-- Project -->
+        <project.built.name>${project.artifactId}</project.built.name>
+        <project.source.directory>src/main/java</project.source.directory>
+        <project.war.source.directory>src/main/webapp</project.war.source.directory>
+
+    </properties>
+
+<!-- ############################################################################################################### -->
+
+    <dependencies>
+
+        <!-- OinKeep Modules -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>oinkeep-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>oinkeep-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>oinkeep-plugin</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>oinkeep-rest</artifactId>
+        </dependency>
+
+        <!-- Spring Dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <!-- Servlet API -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+
+        <!-- Jackson Dependencies -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!-- SnakeYAML -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+
+    </dependencies>
+
+<!-- ############################################################################################################### -->
+
+    <build>
+
+        <finalName>${project.built.name}</finalName>
+        <sourceDirectory>${project.source.directory}</sourceDirectory>
+
+    <!-- ########################################################################################################### -->
+
+        <plugins>
+
+            <!-- Maven Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <!-- Maven Resources Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+            </plugin>
+
+            <!-- WAR Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>true</failOnMissingWebXml>
+                    <warSourceDirectory>${project.war.source.directory}</warSourceDirectory>
+                </configuration>
+            </plugin>
+
+            <!-- Jetty Plugin -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+
+    <!-- ########################################################################################################### -->
+
+    </build>
+
+<!-- ############################################################################################################### -->
+
+    <developers>
+
+        <developer>
+            <name>Ángel Herce Soto</name>
+            <email>indenaiten@gmail.com</email>
+        </developer>
+
+    </developers>
+
+<!-- ############################################################################################################### -->
+
+</project>
