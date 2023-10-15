@@ -1,10 +1,16 @@
-# OinKeep Backend
+# OinKeep
 
 ## Índice
 
+- [Requisitos](#requisitos)
 - [Contribución](#contribución)
 - [Versionado](#versionado)
 - [Desarrolladores](#desarrolladores)
+
+## Requisitos
+
+> **Java:** `17`  
+> **MAVEN:** `3.9.2`
 
 ## Contribución
 
