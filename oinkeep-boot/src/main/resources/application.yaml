@@ -1,2 +1,7 @@
 app:
   name: OinKeep
+server:
+  port: 9090
+logger:
+  level:
+    root: info

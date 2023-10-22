@@ -30,7 +30,6 @@
         <!-- Constants -->
         <const.java.version>17</const.java.version>
         <const.encoding>UTF-8</const.encoding>
-        <const.jetty.port>8080</const.jetty.port>
 
         <!-- Maven -->
         <maven.compiler.source>${const.java.version}</maven.compiler.source>
@@ -50,13 +49,14 @@
         <dep.lombok.version>1.18.30</dep.lombok.version>
         <dep.junit.jupiter.version>5.10.0</dep.junit.jupiter.version>
         <dep.mockito.version>5.6.0</dep.mockito.version>
+        <dep.jetty.servlet.version>11.0.17</dep.jetty.servlet.version>
+        <dep.jetty.webapp.version>11.0.17</dep.jetty.webapp.version>
+        <dep.slf4j.version>1.4.11</dep.slf4j.version>
 
         <!-- Plugins -->
         <plugin.maven.compiler.version>3.11.0</plugin.maven.compiler.version>
         <plugin.maven.resources.version>3.3.1</plugin.maven.resources.version>
         <plugin.maven.surfire.version>3.1.2</plugin.maven.surfire.version>
-        <plugin.maven.war.version>3.4.0</plugin.maven.war.version>
-        <plugin.jetty.maven.version>11.0.17</plugin.jetty.maven.version>
 
     </properties>
 
@@ -173,6 +173,26 @@
                 <scope>test</scope>
             </dependency>
 
+            <!-- Jetty -->
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-servlet</artifactId>
+                <version>${dep.jetty.servlet.version}</version> <!-- Utiliza la versión más reciente -->
+            </dependency>
+
+            <dependency>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-webapp</artifactId>
+                <version>${dep.jetty.servlet.version}</version>
+            </dependency>
+
+            <!-- SLF4J -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${dep.slf4j.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -220,28 +240,6 @@
                         <includes>
                             <include>**/*Test.java</include>
                         </includes>
-                    </configuration>
-                </plugin>
-
-                <!-- WAR Plugin -->
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>${plugin.maven.war.version}</version>
-                </plugin>
-
-                <!-- Jetty Plugin -->
-                <plugin>
-                    <groupId>org.eclipse.jetty</groupId>
-                    <artifactId>jetty-maven-plugin</artifactId>
-                    <version>${plugin.jetty.maven.version}</version>
-                    <configuration>
-                        <webApp>
-                            <contextPath>/</contextPath>
-                        </webApp>
-                        <httpConnector>
-                            <port>${const.jetty.port}</port>
-                        </httpConnector>
                     </configuration>
                 </plugin>
 
