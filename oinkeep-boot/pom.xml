@@ -46,7 +46,7 @@
 
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>oinkeep-plugin</artifactId>
+            <artifactId>oinkeep-data</artifactId>
         </dependency>
 
         <dependency>

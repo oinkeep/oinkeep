@@ -19,7 +19,7 @@ public class SpringConfig {
         context.setConfigLocations( "org.oinkeep.backend.util",
                                     "org.oinkeep.backend.core",
                                     "org.oinkeep.backend.rest",
-                                    "org.oinkeep.backend.plugin",
+                                    "org.oinkeep.backend.data",
                                     "org.oinkeep.backend.boot");
         context.refresh();
         return context;
