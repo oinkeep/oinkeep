@@ -23,6 +23,7 @@ Cada elemento tiene un propósito específico y algunas reglas:
 - **Type**: Debe ser uno de los siguientes:
     - **feat**: Una nueva característica
     - **fix**: Una corrección de errores
+    - **change**: Cambios en el código.
     - **docs**: Cambios en la documentación
     - **style**: Cambios que no afectan el significado del código (espacios en blanco, formateo, falta de puntos y comas, etc)
     - **refactor**: Cambio de código que ni añade una característica ni arregla un error
