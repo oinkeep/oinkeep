@@ -32,7 +32,6 @@ public class Application {
 
         final JettyServerConfig jettyServerConfig = new JettyServerConfig((WebApplicationContext) context, properties);
         final Optional<Server> optionalServer = jettyServerConfig.getServer();
-        final Integer port = jettyServerConfig.getPort();
         final Server server = optionalServer.orElseThrow();
 
         // Arranca el servidor
