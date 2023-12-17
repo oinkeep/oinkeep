@@ -58,9 +58,6 @@
         <plugin.maven.resources.version>3.3.1</plugin.maven.resources.version>
         <plugin.maven.surfire.version>3.1.2</plugin.maven.surfire.version>
 
-        <!-- Sonar -->
-        <sonar.organization>oinkeep</sonar.organization>
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
 <!-- ############################################################################################################### -->
