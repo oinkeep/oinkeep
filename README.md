@@ -34,3 +34,4 @@ Para el control de versiones, este proyecto sigue la convención de [Versionado 
 ## Desarrolladores
 
 - Ángel Herce Soto - [GitHub](https://github.com/Indenaiten)
+- Patricia Fernández González - [GitHub](https://github.com/Patrifgonz)
