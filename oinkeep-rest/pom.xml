@@ -78,10 +78,9 @@
             <artifactId>mockito-core</artifactId>
         </dependency>
 
-        <!-- SLF4J -->
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
         </dependency>
 
     </dependencies>

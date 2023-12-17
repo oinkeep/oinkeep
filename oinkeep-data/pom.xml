@@ -14,10 +14,10 @@
 <!-- ############################################################################################################### -->
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>oinkeep-util</artifactId>
+    <artifactId>oinkeep-data</artifactId>
     <packaging>jar</packaging>
-    <name>OinKeep - Util Module</name>
-    <description>Util Module</description>
+    <name>OinKeep - Plugin Module</name>
+    <description>Plugin Module</description>
 
 <!-- ############################################################################################################### -->
 
@@ -32,6 +32,17 @@
 <!-- ############################################################################################################### -->
 
     <dependencies>
+
+        <!-- OinKeep Modules -->
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>oinkeep-util</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>${project.parent.groupId}</groupId>
+            <artifactId>oinkeep-core</artifactId>
+        </dependency>
 
         <!-- Spring Dependencies -->
         <dependency>
